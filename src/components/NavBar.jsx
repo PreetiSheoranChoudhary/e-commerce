@@ -3,6 +3,9 @@ import React, { Fragment } from 'react'
 
 const isAdminView = false
 const isAuthUser = true
+const user = {
+    role : "admin"
+}
 function NavBar() {
     return (<>
         <div className='bg-white fixed w-full border-b border-gray-200 ' >
@@ -19,7 +22,14 @@ function NavBar() {
                         <button>Cart</button>
                     </Fragment> 
                    ):null }
+                   {
+                    user?.role==="admin" ?
+                    isAdminView ? <button>client view </button> : <button>admin view</button>
+                    : null
+                   }
+
                    
+
                     
 
                 </div>
