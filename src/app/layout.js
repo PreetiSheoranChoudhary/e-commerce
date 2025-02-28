@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       >
         <GlobalState>
         <NavBar/>
-        {children}
+        <main className=" ">{children}</main>
         </GlobalState>
       </body>
     </html>
