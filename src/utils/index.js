@@ -39,9 +39,6 @@ export const navOptions = [
     },
   ];
 
- export  const styles = {
-    button: " mt-1.5 rounded-lg text-white bd-balck inline-block bg-cyan-600 px-5 py-3 text-xs font-medium upprcase tracking-wide ", 
-  };
   
   export const registrationFormControls = [
     {

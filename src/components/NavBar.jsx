@@ -1,7 +1,7 @@
 "use client"
 import { GlobalContext } from "@/context";
 import Glob from "@/context/index";
-import { adminNavOptions, navOptions, styles } from "@/utils";
+import { adminNavOptions, navOptions, } from "@/utils";
 import { Fragment, useContext, useEffect } from "react";
 import Cookies from "js-cookie";
 import CommonModal from "./CommonModal";
@@ -40,7 +40,7 @@ function NavItems({isModalView = false}) {
 function NavBar() {
     const { showNavModal, setShowNavModal } = useContext(GlobalContext)
     return (<>
-        <nav className='bg-white fixed w-full border-b border-gray-200 ' >
+        <nav className='bg-white w-full border-b border-gray-200 ' >
             <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
                 <div className='flex items-center cursor-pointer' >
                     <span className='text-2xl font-bold whitespace-nowrap'>
@@ -50,16 +50,16 @@ function NavBar() {
                 <div className='flex md:order-2 gap-2 '>
                     {!isAdminView && isAuthUser ? (
                         <Fragment>
-                            <button className={styles.button}>Account</button>
-                            <button className={styles.button}>Cart</button>
+                            <button className=" mt-1.5 rounded-lg text-white bd-balck inline-block bg-cyan-600 px-5 py-3 text-xs font-medium upprcase tracking-wide">Account</button>
+                            <button className=" mt-1.5 rounded-lg text-white bd-balck inline-block bg-cyan-600 px-5 py-3 text-xs font-medium upprcase tracking-wide">Cart</button>
                         </Fragment>
                     ) : null}
                     {
                         user?.role === "admin" ?
-                            isAdminView ? <button className={styles.button}>client view </button> : <button className={styles.button}>admin view</button>
+                            isAdminView ? <button className=" mt-1.5 rounded-lg text-white bd-balck inline-block bg-cyan-600 px-5 py-3 text-xs font-medium upprcase tracking-wide">client view </button> : <button className=" mt-1.5 rounded-lg text-white bd-balck inline-block bg-cyan-600 px-5 py-3 text-xs font-medium upprcase tracking-wide">admin view</button>
                             : null
                     }
-                    {isAuthUser ? <button className={styles.button}>Logout</button> : <button className={styles.button}>Login</button>}
+                    {isAuthUser ? <button className=" mt-1.5 rounded-lg text-white bd-balck inline-block bg-cyan-600 px-5 py-3 text-xs font-medium upprcase tracking-wide">Logout</button> : <button className=" mt-1.5 rounded-lg text-white bd-balck inline-block bg-cyan-600 px-5 py-3 text-xs font-medium upprcase tracking-wide">Login</button>}
                     <button className="inline-flex items-center  p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100"
                         data-collapse-toggle="navbar-sticky"
                         type="button"
